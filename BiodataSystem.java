@@ -10,9 +10,11 @@ class Biodata {
     private String birthDate;
     private String address;
     private String contactNumber;
+    private String university;
 
     public Biodata(String firstName, String middleName, String lastName, String age,
-                    String gender, String birthDate, String address, String contactNumber) {
+                    String gender, String birthDate, String address, String contactNumber,
+                    String university) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -21,6 +23,7 @@ class Biodata {
         this.birthDate = birthDate;
         this.address = address;
         this.contactNumber = contactNumber;
+        this.university = university;
     }
 
     // Getters
@@ -65,6 +68,10 @@ class Biodata {
         this.contactNumber = contactNumber;
     }
 
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
     public void showInfo() {
         System.out.println("\n========== Biodata Profile ==========");
         System.out.println("First Name:     " + firstName);
@@ -75,6 +82,7 @@ class Biodata {
         System.out.println("Birth Date:     " + birthDate);
         System.out.println("Address:        " + address);
         System.out.println("Contact Number: " + contactNumber);
+        System.out.println("University:     " + university);
         System.out.println("======================================");
     }
 }
@@ -112,6 +120,9 @@ public class BiodataSystem {
         System.out.print("Contact Number: ");
         String contactNumber = sc.nextLine();
 
+        System.out.print("University: ");
+        String university = sc.nextLine();
+
         Biodata biodata = new Biodata(
             firstName,
             middleName,
@@ -120,7 +131,8 @@ public class BiodataSystem {
             gender,
             birthDate,
             address,
-            contactNumber
+            contactNumber,
+            university
         );
 
         biodataList.add(biodata);
